@@ -7,12 +7,8 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>5_Basics_of_OOP</groupId>
   <artifactId>Task1</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-
   <name>Task1</name>
-  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
