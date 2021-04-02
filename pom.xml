@@ -6,6 +6,5 @@
   <packaging>pom</packaging>
   <modules>
   	<module>Task1</module>
-  	<module>Task2</module>
   </modules>
 </project>
