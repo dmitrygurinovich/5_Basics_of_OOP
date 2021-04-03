@@ -25,5 +25,6 @@ public class Main {
 		
 		editor.deleteContent(textFile);
 		view.print(textFile);
+
 	}
 }
