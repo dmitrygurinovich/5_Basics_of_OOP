@@ -8,8 +8,11 @@ import by.epam.oop.entity.Payment;
  */
 public class Main {
     public static void main( String[] args ){
-    	
-        Payment payment = new Payment(new Payment().new Product("Kinder surpize", 4), new Payment().new Product("Chupa-Chups", 2));
-        System.out.println(payment);
-    }
+		  Payment payment = new Payment ( 
+				  new Payment().new Product("Kinder surpize", 4), 
+				  new Payment().new Product("Chupa-Chups", 2),
+				  new Payment().new Product("Coca-Cola", 3)
+		  );
+		  System.out.println(payment);
+	}
 }
