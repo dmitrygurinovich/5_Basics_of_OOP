@@ -53,7 +53,7 @@ public class Calendar {
 
 	@Override
 	public String toString() {
-		return "Calendar [days=" + days + "]";
+		return "Calendar: " + days;
 	}
 
 	public class Day {
