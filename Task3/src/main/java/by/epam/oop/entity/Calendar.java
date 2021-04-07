@@ -12,6 +12,9 @@ public class Calendar {
 
 	public Calendar(Day... day) {
 		this.days = new ArrayList<Day>(Arrays.asList(day));
+		for (int i = 0; i < day.length; i++) {
+			days.get(i).noteNumber = i + 1;
+		}
 	}
 
 	public Calendar() {
@@ -53,14 +56,15 @@ public class Calendar {
 
 	@Override
 	public String toString() {
-		return "Calendar: " + days;
+		return "Calendar: " + days + "\n";
 	}
 
 	public class Day {
+		private int noteNumber;
 		private Date date;
 		private String name;
 
-		public SimpleDateFormat dateFormat = new SimpleDateFormat("dd.mm.Y", Locale.ENGLISH);
+		private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.mm.yyyy", Locale.US);
 
 		public Day(String date, String name) {
 			try {
@@ -89,6 +93,14 @@ public class Calendar {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public int getNoteNumber() {
+			return noteNumber;
+		}
+
+		public void setNoteNumber(int noteNumber) {
+			this.noteNumber = noteNumber;
 		}
 
 		@Override
@@ -131,7 +143,7 @@ public class Calendar {
 
 		@Override
 		public String toString() {
-			return "Date: " + dateFormat.format(date) + " - " + name;
+			return "Date №" + noteNumber + ": " + dateFormat.format(date) + " - " + name;
 		}
 
 	}
