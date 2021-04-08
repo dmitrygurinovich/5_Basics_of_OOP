@@ -1,6 +1,9 @@
 package by.epam.oop.entity;
 
-public class TreasureChest {
+import java.io.Serializable;
+
+public class TreasureChest implements Serializable{
+	
 	private Ring ring;
 	private Earring earring;
 	private Necklace necklace;
@@ -8,8 +11,9 @@ public class TreasureChest {
 	private Gold gold;
 	private int number;
 	
+	private static final long serialVersionUID = 5172491652221134637L;
 	private static int defaultNumber = 1;
-
+	
 	/**
 	 * @param ring
 	 * @param earring
