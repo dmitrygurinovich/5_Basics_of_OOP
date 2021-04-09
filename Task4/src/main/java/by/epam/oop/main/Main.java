@@ -1,6 +1,9 @@
 package by.epam.oop.main;
 
+import java.io.IOException;
+
 import by.epam.oop.entity.*;
+import by.epam.oop.logic.CaveLogic;
 
 /*Задача 4.
 Создать консольное приложение, удовлетворяющее следующим требованиям:
@@ -16,18 +19,24 @@ import by.epam.oop.entity.*;
 выбора сокровищ на заданную сумму.
 */
 public class Main {
-	public static void main(String[] args) {
-		Ring ring = new Ring("Gold ring", 10);
-		Earring earring = new Earring("Gold earring", 13);
-		Necklace necklace = new Necklace("Gold necklace", 26);
-		Gem gem = new Gem("Amatist", 29);
-		Gold gold = new Gold(20);
+	public static void main(String[] args) throws ClassNotFoundException, IOException {
+		/*
+		 * Ring ring = new Ring("Gold ring", 10); Earring earring = new
+		 * Earring("Gold earring", 13); Necklace necklace = new
+		 * Necklace("Gold necklace", 26); Gem gem = new Gem("Amatist", 29); Gold gold =
+		 * new Gold(20);
+		 * 
+		 * TreasureChest first = new TreasureChest(ring, earring, necklace, gem, gold);
+		 * TreasureChest second = new TreasureChest(ring, earring, necklace, gem);
+		 * TreasureChest third = new TreasureChest(ring, earring, necklace, gem);
+		 */
 
-		TreasureChest first = new TreasureChest(ring, earring, necklace, gem, gold);
-		TreasureChest second = new TreasureChest(ring, earring, necklace, gem, gold);
-		
-		System.out.println(first);
-		System.out.println(second);
+		CaveLogic logic = new CaveLogic();
+
+		// logic.writeToFile(new Cave(first, second, third));
+
+		Cave cave = logic.readFromFile();
+		System.out.println(cave);
 
 	}
 }

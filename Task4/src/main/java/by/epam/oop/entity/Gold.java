@@ -1,6 +1,11 @@
 package by.epam.oop.entity;
 
-public class Gold {
+import java.io.Serializable;
+
+public class Gold implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private int numberOfCoins;
 
 	public Gold(int numberOfCoins) {

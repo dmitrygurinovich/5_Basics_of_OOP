@@ -1,6 +1,11 @@
 package by.epam.oop.entity;
 
-abstract public class Treasure {
+import java.io.Serializable;
+
+abstract public class Treasure implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private String name;
 	private int cost;
 
