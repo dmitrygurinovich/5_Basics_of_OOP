@@ -1,8 +1,6 @@
 package by.epam.oop.entity;
 
-import java.io.Serializable;
-
-public class Gem extends Treasure implements Serializable {
+public class Gem extends Treasure {
 	
 	private static final long serialVersionUID = 1L;
 

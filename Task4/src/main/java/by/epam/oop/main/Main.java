@@ -20,6 +20,7 @@ import by.epam.oop.logic.CaveLogic;
 */
 public class Main {
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
+
 		/*
 		 * Ring ring = new Ring("Gold ring", 10); Earring earring = new
 		 * Earring("Gold earring", 13); Necklace necklace = new
