@@ -1,9 +1,8 @@
 package by.epam.oop.main;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import by.epam.oop.entity.*;
+import by.epam.oop.entity.Cave;
 import by.epam.oop.logic.CaveLogic;
 
 /*Задача 4.
@@ -21,61 +20,9 @@ import by.epam.oop.logic.CaveLogic;
 */
 public class Main {
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
-
-		ArrayList<TreasureChest> treasureBase = new ArrayList<>();
-
-		// Ring ring, Earring earring, Necklace necklace, Gem gem, Gold gold
-		for (int i = 0; i < 16; i++) {
-			treasureBase.add(new TreasureChest(new Ring("Silver ring", Main.getRandomNumber()),
-					new Earring("Gold earring", Main.getRandomNumber()),
-					new Necklace("Silver necklace", Main.getRandomNumber()), new Gem("Rubin", Main.getRandomNumber()),
-					new Gold()));
-		}
-
-		// Ring ring, Earring earring, Necklace necklace, Gem gem
-		for (int i = 0; i < 16; i++) {
-			treasureBase.add(new TreasureChest(new Ring("Gold ring", Main.getRandomNumber()),
-					new Earring("Silver earring", Main.getRandomNumber()),
-					new Necklace("Gold necklace", Main.getRandomNumber()),
-					new Gem("Sapphire", Main.getRandomNumber())));
-		}
-
-		// Ring ring, Earring earring, Necklace necklace, Gold gold
-		for (int i = 0; i < 17; i++) {
-			treasureBase.add(new TreasureChest(new Ring("Silver ring", Main.getRandomNumber()),
-					new Earring("Gold earring", Main.getRandomNumber()),
-					new Necklace("Silver necklace", Main.getRandomNumber()), new Gold(Main.getRandomNumber())));
-		}
-
-		// Ring ring, Earring earring, Gem gem, Gold gold
-		for (int i = 0; i < 17; i++) {
-			treasureBase.add(new TreasureChest(new Ring("Gold ring", Main.getRandomNumber()),
-					new Earring("Silver earring", Main.getRandomNumber()), new Gem("Diamond", Main.getRandomNumber()),
-					new Gold(Main.getRandomNumber())));
-		}
-
-		// Ring ring, Necklace necklace, Gem gem, Gold gold
-		for (int i = 0; i < 17; i++) {
-			treasureBase.add(new TreasureChest(new Ring("Silver Ring", Main.getRandomNumber()),
-					new Necklace("Gold necklace", Main.getRandomNumber()), new Gem("Demantoid", Main.getRandomNumber()),
-					new Gold(Main.getRandomNumber())));
-		}
-
-		// Earring earring, Necklace necklace, Gem gem, Gold gold
-		for (int i = 0; i < 17; i++) {
-			treasureBase.add(new TreasureChest(new Earring("Gold earring", Main.getRandomNumber()),
-					new Necklace("Silver necklace", Main.getRandomNumber()), new Gem("Citrine", Main.getRandomNumber()),
-					new Gold(Main.getRandomNumber())));
-		}
-
-		Cave cave = new Cave(treasureBase);
 		CaveLogic logic = new CaveLogic();
-		logic.writeToFile(cave);
-
+		Cave cave = logic.readFromFile();
+		
+		System.out.println(cave);
 	}
-
-	public static int getRandomNumber() {
-		return (int) (Math.random() * 100);
-	}
-
 }
