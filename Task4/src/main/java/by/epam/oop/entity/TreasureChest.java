@@ -12,6 +12,7 @@ public class TreasureChest implements Serializable{
 	private Gem gem;
 	private Gold gold;
 	private int number;
+	private int totalCost;
 	
 	
 	private static int defaultNumber = 1;
@@ -30,6 +31,7 @@ public class TreasureChest implements Serializable{
 		this.necklace = necklace;
 		this.gem = gem;
 		this.gold = gold;
+		this.totalCost = ring.getCost() + earring.getCost() + necklace.getCost() + gem.getCost() + gold.getNumberOfCoins();
 	}
 
 	/**
@@ -44,6 +46,7 @@ public class TreasureChest implements Serializable{
 		this.earring = earring;
 		this.necklace = necklace;
 		this.gem = gem;
+		this.totalCost = ring.getCost() + earring.getCost() + necklace.getCost()+ gem.getCost();
 	}
 
 	/**
@@ -58,6 +61,7 @@ public class TreasureChest implements Serializable{
 		this.earring = earring;
 		this.necklace = necklace;
 		this.gold = gold;
+		this.totalCost = ring.getCost() + earring.getCost() + necklace.getCost() + gold.getNumberOfCoins();
 	}
 
 	/**
@@ -72,6 +76,7 @@ public class TreasureChest implements Serializable{
 		this.earring = earring;
 		this.gem = gem;
 		this.gold = gold;
+		this.totalCost = ring.getCost() + earring.getCost() + gem.getCost() + gold.getNumberOfCoins();
 	}
 
 	/**
@@ -86,6 +91,7 @@ public class TreasureChest implements Serializable{
 		this.necklace = necklace;
 		this.gem = gem;
 		this.gold = gold;
+		this.totalCost = ring.getCost() + necklace.getCost() + gem.getCost() + gold.getNumberOfCoins();
 	}
 
 	/**
@@ -100,6 +106,7 @@ public class TreasureChest implements Serializable{
 		this.necklace = necklace;
 		this.gem = gem;
 		this.gold = gold;
+		this.totalCost = earring.getCost() + necklace.getCost() + gem.getCost() + gold.getNumberOfCoins();
 	}
 
 	public TreasureChest() {
@@ -146,6 +153,14 @@ public class TreasureChest implements Serializable{
 		this.gold = gold;
 	}
 
+	public int getTotalCost() {
+		return totalCost;
+	}
+
+	public void setTotalCost(int totalCost) {
+		this.totalCost = totalCost;
+	}
+
 	public int getNumber() {
 		return number;
 	}
@@ -162,7 +177,9 @@ public class TreasureChest implements Serializable{
 		result = prime * result + ((gem == null) ? 0 : gem.hashCode());
 		result = prime * result + ((gold == null) ? 0 : gold.hashCode());
 		result = prime * result + ((necklace == null) ? 0 : necklace.hashCode());
+		result = prime * result + number;
 		result = prime * result + ((ring == null) ? 0 : ring.hashCode());
+		result = prime * result + totalCost;
 		return result;
 	}
 
@@ -195,10 +212,14 @@ public class TreasureChest implements Serializable{
 				return false;
 		} else if (!necklace.equals(other.necklace))
 			return false;
+		if (number != other.number)
+			return false;
 		if (ring == null) {
 			if (other.ring != null)
 				return false;
 		} else if (!ring.equals(other.ring))
+			return false;
+		if (totalCost != other.totalCost)
 			return false;
 		return true;
 	}
@@ -210,7 +231,8 @@ public class TreasureChest implements Serializable{
 				+ (earring != null ? earring + "\n" : "")
 				+ (necklace != null ? necklace + "\n" : "") 
 				+ (gem != null ? gem + "\n" : "")
-				+ (gold != null ? gold + "\n" : "");
+				+ (gold != null ? gold + "\n" : "")
+				+ (totalCost != 0 ? "- Total cost: " + totalCost + " coins\n" : "");
 	}
 
 }
