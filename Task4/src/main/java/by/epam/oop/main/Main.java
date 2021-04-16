@@ -1,10 +1,6 @@
 package by.epam.oop.main;
 
-import java.io.IOException;
-
-import by.epam.oop.entity.Cave;
-import by.epam.oop.logic.CaveLogic;
-import by.epam.oop.view.View;
+import by.epam.oop.view.Runner;
 
 /*Задача 4.
 Создать консольное приложение, удовлетворяющее следующим требованиям:
@@ -20,15 +16,9 @@ import by.epam.oop.view.View;
 выбора сокровищ на заданную сумму.
 */
 public class Main {
-	public static void main(String[] args) throws ClassNotFoundException, IOException {
-		CaveLogic logic = new CaveLogic();
-		View view = new View();
-		Cave cave = logic.readFromFile();
-
-		view.print("Dragon's cave:", cave);
-		view.print("The most expensive treasure chest:", logic.getTheMostExpensiveTreasureCheast(cave));
-		view.print("You can get:", logic.getTreasureChestByCost(cave, 1218));
-
+	public static void main(String[] args) {
+		Runner runner = new Runner();
+		runner.menu();
 	}
 
 }

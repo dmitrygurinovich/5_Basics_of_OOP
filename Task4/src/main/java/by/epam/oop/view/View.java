@@ -10,6 +10,10 @@ public class View {
 	public View() {
 
 	}
+	
+	public void print(String text) {
+		System.out.println(text + "\n");
+	}
 
 	public void print(String text, Cave cave) {
 		System.out.println(text + "\n\n" + cave);
