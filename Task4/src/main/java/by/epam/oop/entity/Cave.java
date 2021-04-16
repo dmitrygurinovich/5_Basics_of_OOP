@@ -57,7 +57,7 @@ public class Cave implements Serializable {
 
 	@Override
 	public String toString() {
-		StringBuilder result = new StringBuilder("Dragon's cave:\n\n");
+		StringBuilder result = new StringBuilder("");
 		for (TreasureChest treasureChest : cheastList) {
 			result.append(treasureChest + "\n");
 		}

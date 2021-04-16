@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import by.epam.oop.entity.Cave;
 import by.epam.oop.logic.CaveLogic;
+import by.epam.oop.view.View;
 
 /*Задача 4.
 Создать консольное приложение, удовлетворяющее следующим требованиям:
@@ -21,8 +22,13 @@ import by.epam.oop.logic.CaveLogic;
 public class Main {
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		CaveLogic logic = new CaveLogic();
+		View view = new View();
 		Cave cave = logic.readFromFile();
-		
-		System.out.println(cave);
+
+		view.print("Dragon's cave:", cave);
+		view.print("The most expensive treasure chest:", logic.getTheMostExpensiveTreasureCheast(cave));
+		view.print("You can get:", logic.getTreasureChestByCost(cave, 1218));
+
 	}
+
 }

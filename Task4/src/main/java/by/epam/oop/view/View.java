@@ -8,17 +8,17 @@ import by.epam.oop.entity.TreasureChest;
 public class View {
 
 	public View() {
-		
+
 	}
-	
-	public void print(Cave cave) {
-		System.out.println(cave);
+
+	public void print(String text, Cave cave) {
+		System.out.println(text + "\n\n" + cave);
 	}
-	
+
 	public void print(String text, TreasureChest chest) {
 		System.out.println(text + "\n" + chest);
 	}
-	
+
 	public void print(String text, ArrayList<TreasureChest> treasures) {
 		StringBuilder treasuresToString = new StringBuilder(text);
 		treasuresToString.append("\n");
@@ -27,5 +27,5 @@ public class View {
 		}
 		System.out.println(treasuresToString.toString());
 	}
-	
+
 }
