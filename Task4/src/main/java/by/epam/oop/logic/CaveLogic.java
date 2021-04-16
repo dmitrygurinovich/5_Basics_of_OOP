@@ -46,7 +46,11 @@ public class CaveLogic {
 
 		return null;
 	}
-
+	/**
+	 * 
+	 * @param cave - Dragon's cave
+	 * @param cost - The amount you have (coins)
+	 */
 	public ArrayList<TreasureChest> getTreasureChestByCost(Cave cave, int cost) {
 		ArrayList<TreasureChest> chooseList = new ArrayList<>();
 

@@ -20,12 +20,12 @@ public class View {
 	}
 	
 	public void print(String text, ArrayList<TreasureChest> treasures) {
-		StringBuilder treasuresToString = new StringBuilder(text);
-		treasuresToString.append("\n");
+		StringBuilder treasuresListToString = new StringBuilder(text);
+		treasuresListToString.append("\n");
 		for (TreasureChest treasureChest : treasures) {
-			treasuresToString.append(treasureChest.toString()).append("\n");
+			treasuresListToString.append(treasureChest.toString()).append("\n");
 		}
-		System.out.println(treasuresToString.toString());
+		System.out.println(treasuresListToString.toString());
 	}
 	
 }
