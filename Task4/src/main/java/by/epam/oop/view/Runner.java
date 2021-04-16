@@ -30,7 +30,7 @@ public class Runner {
 
 	public void menu() {
 		int menuItem;
-		System.out.println(""
+		view.print(""
 				+ "###########################################\n"
 				+ "1. Show all treasure chest.\n"
 				+ "2. Show the most expensive treasure.\n"
@@ -41,7 +41,7 @@ public class Runner {
 		while (!in.hasNextInt()) {
 			in.next();
 			view.print("Wrong choice!");
-			System.out.println(""
+			view.print(""
 					+ "###########################################\n"
 					+ "1. Show all treasure chest.\n"
 					+ "2. Show the most expensive treasure.\n"
