@@ -31,17 +31,6 @@ public class CaveLogic {
 		return caveFromFile;
 	}
 
-	public TreasureChest getTreasureChestByNumber(Cave cave, int number) {
-
-		for (TreasureChest chest : cave.getCheastList()) {
-			if (chest.getNumber() == number) {
-				return chest;
-			}
-		}
-
-		return null;
-	}
-
 	public TreasureChest getTheMostExpensiveTreasureCheast(Cave cave) {
 		int maxCost = Integer.MIN_VALUE;
 
@@ -57,29 +46,36 @@ public class CaveLogic {
 
 		return null;
 	}
-	/**
-	 * 
-	 * @param cave - Dragon's cave
-	 * @param cost - The amount you have (coins)
-	 */
-	public ArrayList<TreasureChest> getTreasureChestByCost(Cave cave, int cost) {
-		ArrayList<TreasureChest> temp = new ArrayList<>();
 
-		// sort ArrayList by up
+	public ArrayList<TreasureChest> getTreasureChestByCost(Cave cave, int cost) {
+		ArrayList<TreasureChest> chooseList = new ArrayList<>();
+
 		cave.getCheastList().sort(new Comparator<TreasureChest>() {
 			@Override
 			public int compare(TreasureChest o1, TreasureChest o2) {
 				return o1.getTotalCost() - o2.getTotalCost();
 			}
 		});
-			
-		/*
-		 * если сумма больше самого дорогого - выбираем дорогой и считаем остаток если
-		 * остаток меньше минимального - конец если остаток больше минимального (значит
-		 * есть еще вариант) - ищем максимальный возможный сундук и так до победного
-		 * конца вызываем рекурсивно метод
-		 */
 
-		return temp;
+		int lastElement = cave.getCheastList().size() - 1;
+		for (int i = lastElement; i >= 0; i--) {
+
+			if (cave.getCheastList().get(i).getTotalCost() < cost
+					&& cave.getCheastList().get(0).getTotalCost() <= cost) {
+				chooseList.add(cave.getCheastList().get(i));
+				lastElement--;
+				cost = cost - cave.getCheastList().get(i).getTotalCost();
+			}
+
+		}
+		
+		cave.getCheastList().sort(new Comparator<TreasureChest>() {
+			@Override
+			public int compare(TreasureChest o1, TreasureChest o2) {
+				return o1.getNumber() - o2.getNumber();
+			}
+		});
+
+		return chooseList;
 	}
 }
