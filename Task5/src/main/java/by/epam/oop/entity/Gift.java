@@ -102,35 +102,13 @@ public class Gift {
 			return this;
 		}
 
-		public Gift build() {
-			int calculatedTotalCost = 0;
-
-			if (newGift.bar.getCost() != 0) {
-				calculatedTotalCost += newGift.bar.getCost();
-			}
-
-			if (newGift.lollipops.getCost() != 0) {
-				calculatedTotalCost += newGift.lollipops.getCost();
-			}
-
-			if (newGift.soda.getCost() != 0) {
-				calculatedTotalCost += newGift.soda.getCost();
-			}
-
-			if (newGift.chocolateСandies.getCost() != 0) {
-				calculatedTotalCost += newGift.chocolateСandies.getCost();
-			}
-
-			if (newGift.cookie.getCost() != 0) {
-				calculatedTotalCost += newGift.cookie.getCost();
-			}
-
-			if (newGift.packaging.getCost() != 0) {
-				calculatedTotalCost += newGift.packaging.getCost();
-			}
-
-			newGift.totalCost = calculatedTotalCost;
-
+		public Gift build() {			
+			newGift.totalCost = (newGift.bar.getCost() != 0 ? newGift.bar.getCost() : 0) + 
+								(newGift.lollipops.getCost() != 0 ? newGift.lollipops.getCost() : 0) + 
+								(newGift.soda.getCost() != 0 ? newGift.soda.getCost() : 0) + 
+								(newGift.chocolateСandies.getCost() != 0 ? newGift.chocolateСandies.getCost() : 0) + 
+								(newGift.cookie.getCost() != 0 ? newGift.cookie.getCost() : 0) + 
+								(newGift.packaging.getCost() != 0 ? newGift.packaging.getCost() : 0);
 			return newGift;
 		}
 	}

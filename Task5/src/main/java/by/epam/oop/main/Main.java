@@ -19,7 +19,7 @@ public class Main {
 				.withBar("Mars", 5)
 				.withСookie("К чаю", 2)
 				.withLollipops("Chupa-Chups", 3)
-				.withСhocolateСandies("Грильяж", 4)
+				.withСhocolateСandies("Грильяж", 5)
 				.withSoda("Fanta", 4)
 				.withPackaging("Box", 10)
 				.build();
