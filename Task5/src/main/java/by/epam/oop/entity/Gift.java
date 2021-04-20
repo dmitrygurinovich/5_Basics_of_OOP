@@ -103,12 +103,12 @@ public class Gift {
 		}
 
 		public Gift build() {			
-			newGift.totalCost = (newGift.bar.getCost() != 0 ? newGift.bar.getCost() : 0) + 
-								(newGift.lollipops.getCost() != 0 ? newGift.lollipops.getCost() : 0) + 
-								(newGift.soda.getCost() != 0 ? newGift.soda.getCost() : 0) + 
-								(newGift.chocolateСandies.getCost() != 0 ? newGift.chocolateСandies.getCost() : 0) + 
-								(newGift.cookie.getCost() != 0 ? newGift.cookie.getCost() : 0) + 
-								(newGift.packaging.getCost() != 0 ? newGift.packaging.getCost() : 0);
+			newGift.totalCost = (newGift.bar !=null ? newGift.bar.getCost() : 0) + 
+								(newGift.lollipops!=null ? newGift.lollipops.getCost() : 0) + 
+								(newGift.soda!= null ? newGift.soda.getCost() : 0) + 
+								(newGift.chocolateСandies!= null ? newGift.chocolateСandies.getCost() : 0) + 
+								(newGift.cookie != null ? newGift.cookie.getCost() : 0) + 
+								(newGift.packaging != null ? newGift.packaging.getCost() : 0);
 			return newGift;
 		}
 	}
@@ -177,7 +177,7 @@ public class Gift {
 				+ (soda != null ? "Soda: " + soda : "")
 				+ (chocolateСandies != null ? "Chocolate candies: " + chocolateСandies : "")
 				+ (cookie != null ? "Сookie: " + cookie : "") + (packaging != null ? packaging : "") + "\n"
-				+ (totalCost != 0 ? "# Total cost: " + totalCost + " BYN" : 0);
+				+ (totalCost != 0 ? "# Total cost: " + totalCost + " BYN \n" : 0);
 	}
 
 }

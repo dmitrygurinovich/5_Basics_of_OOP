@@ -15,7 +15,7 @@ import by.epam.oop.entity.*;
 подарок). Составляющими целого подарка являются сладости и упаковка.*/
 public class Main {
 	public static void main(String[] args) {
-		Gift gift = new Gift.Builder()
+		Gift giftForMum = new Gift.Builder()
 				.withBar("Mars", 5)
 				.withСookie("К чаю", 2)
 				.withLollipops("Chupa-Chups", 3)
@@ -24,6 +24,15 @@ public class Main {
 				.withPackaging("Box", 10)
 				.build();
 		
-		System.out.println(gift);
+		Gift giftForWife = new Gift.Builder()
+				.withСhocolateСandies("Столичные", 18)
+				.withBar("Bounty", 3)
+				.withСookie("Овсяное печенье", 4)
+				.withSoda("Mirinda", 5)
+				.withPackaging("Big box", 10)
+				.build();
+		
+		System.out.println(giftForMum);
+		System.out.println(giftForWife);
 	}
 }
