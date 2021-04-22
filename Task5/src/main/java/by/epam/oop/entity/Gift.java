@@ -72,33 +72,33 @@ public class Gift {
 			newGift = new Gift();
 		}
 
-		public Builder withBar(String name, int cost) {
+		public Builder buildBar(String name, int cost) {
 			newGift.bar = new Bar(name, cost);
 			return this;
 		}
 
-		public Builder withLollipops(String name, int cost) {
+		public Builder buildLollipops(String name, int cost) {
 			newGift.lollipops = new Lollipops(name, cost);
 			return this;
 		}
 
-		public Builder withSoda(String name, int cost) {
+		public Builder buildSoda(String name, int cost) {
 			newGift.soda = new Soda(name, cost);
 			return this;
 		}
 
-		public Builder withСhocolateСandies(String name, int cost) {
+		public Builder buildСhocolateСandies(String name, int cost) {
 			newGift.chocolateСandies = new СhocolateСandies(name, cost);
 			return this;
 		}
 
-		public Builder withСookie(String name, int cost) {
+		public Builder buildСookie(String name, int cost) {
 			newGift.cookie = new Сookie(name, cost);
 			return this;
 		}
 
-		public Builder withPackaging(String name, int cost) {
-			newGift.packaging = new Packaging(name, cost);
+		public Builder buildPackaging(Packaging packaging) {
+			newGift.packaging = packaging;
 			return this;
 		}
 

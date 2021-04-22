@@ -16,23 +16,19 @@ import by.epam.oop.entity.*;
 public class Main {
 	public static void main(String[] args) {
 		Gift giftForMum = new Gift.Builder()
-				.withBar("Mars", 5)
-				.withСookie("К чаю", 2)
-				.withLollipops("Chupa-Chups", 3)
-				.withСhocolateСandies("Грильяж", 5)
-				.withSoda("Fanta", 4)
-				.withPackaging("Box", 10)
-				.build();
-		
-		Gift giftForWife = new Gift.Builder()
-				.withСhocolateСandies("Столичные", 18)
-				.withBar("Bounty", 3)
-				.withСookie("Овсяное печенье", 4)
-				.withSoda("Mirinda", 5)
-				.withPackaging("Big box", 10)
+				.buildPackaging(Packaging.CARDBOARD_BOX)
+				.buildСhocolateСandies("The best candies", 10)
+				.buildSoda("Fanta", 3)
 				.build();
 		
 		System.out.println(giftForMum);
+		
+		Gift giftForWife = new Gift.Builder()
+				.buildPackaging(Packaging.CRAFT_PAPER)
+				.buildСookie("The best cookies", 7)
+				.buildSoda("7 Up", 4)
+				.build();
+		
 		System.out.println(giftForWife);
 	}
 }
