@@ -1,5 +1,7 @@
 package by.epam.oop.entity;
 
+import by.epam.oop.logic.GiftBuilderLogic;
+
 public class Gift {
 	private Bar bar;
 	private Lollipops lollipops;
@@ -67,7 +69,8 @@ public class Gift {
 
 	public static class Builder {
 		private Gift newGift;
-
+		private GiftBuilderLogic check = new GiftBuilderLogic();
+		
 		public Builder() {
 			newGift = new Gift();
 		}
@@ -78,8 +81,14 @@ public class Gift {
 		}
 
 		public Builder buildLollipops(String name, int cost) {
-			newGift.lollipops = new Lollipops(name, cost);
-			return this;
+			if (!check.checkFields(name, cost)) {
+				System.err.println();
+				newGift.lollipops = null;
+				return this;
+			} else {
+				newGift.lollipops = new Lollipops(name, cost);
+				return this;
+			}
 		}
 
 		public Builder buildSoda(String name, int cost) {
@@ -102,13 +111,13 @@ public class Gift {
 			return this;
 		}
 
-		public Gift build() {			
-			newGift.totalCost = (newGift.bar !=null ? newGift.bar.getCost() : 0) + 
-								(newGift.lollipops!=null ? newGift.lollipops.getCost() : 0) + 
-								(newGift.soda!= null ? newGift.soda.getCost() : 0) + 
-								(newGift.chocolateСandies!= null ? newGift.chocolateСandies.getCost() : 0) + 
-								(newGift.cookie != null ? newGift.cookie.getCost() : 0) + 
-								(newGift.packaging != null ? newGift.packaging.getCost() : 0);
+		public Gift build() {
+			newGift.totalCost = (newGift.bar != null ? newGift.bar.getCost() : 0)
+					+ (newGift.lollipops != null ? newGift.lollipops.getCost() : 0)
+					+ (newGift.soda != null ? newGift.soda.getCost() : 0)
+					+ (newGift.chocolateСandies != null ? newGift.chocolateСandies.getCost() : 0)
+					+ (newGift.cookie != null ? newGift.cookie.getCost() : 0)
+					+ (newGift.packaging != null ? newGift.packaging.getCost() : 0);
 			return newGift;
 		}
 	}
