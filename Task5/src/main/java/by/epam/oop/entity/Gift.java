@@ -70,19 +70,23 @@ public class Gift {
 	public static class Builder {
 		private Gift newGift;
 		private GiftBuilderLogic check = new GiftBuilderLogic();
-		
+
 		public Builder() {
 			newGift = new Gift();
 		}
 
 		public Builder buildBar(String name, int cost) {
-			newGift.bar = new Bar(name, cost);
-			return this;
+			if (!check.checkFields(name, cost)) {
+				newGift.bar = null;
+				return this;
+			} else {
+				newGift.bar = new Bar(name, cost);
+				return this;
+			}
 		}
 
 		public Builder buildLollipops(String name, int cost) {
 			if (!check.checkFields(name, cost)) {
-				System.err.println();
 				newGift.lollipops = null;
 				return this;
 			} else {
@@ -92,18 +96,33 @@ public class Gift {
 		}
 
 		public Builder buildSoda(String name, int cost) {
-			newGift.soda = new Soda(name, cost);
-			return this;
+			if (!check.checkFields(name, cost)) {
+				newGift.soda = null;
+				return this;
+			} else {
+				newGift.soda = new Soda(name, cost);
+				return this;
+			}
 		}
 
 		public Builder buildСhocolateСandies(String name, int cost) {
-			newGift.chocolateСandies = new СhocolateСandies(name, cost);
-			return this;
+			if (!check.checkFields(name, cost)) {
+				newGift.chocolateСandies = null;
+				return this;
+			} else {
+				newGift.chocolateСandies = new СhocolateСandies(name, cost);
+				return this;
+			}
 		}
 
 		public Builder buildСookie(String name, int cost) {
-			newGift.cookie = new Сookie(name, cost);
-			return this;
+			if (!check.checkFields(name, cost)) {
+				newGift.cookie = null;
+				return this;
+			} else {
+				newGift.cookie = new Сookie(name, cost);
+				return this;
+			}
 		}
 
 		public Builder buildPackaging(Packaging packaging) {

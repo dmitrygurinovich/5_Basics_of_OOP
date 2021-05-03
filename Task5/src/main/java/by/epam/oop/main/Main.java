@@ -18,11 +18,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		
 		  Gift giftForMum = new Gift.Builder()
 				  .buildPackaging(Packaging.CARDBOARD_BOX)
 				  .buildСhocolateСandies("The best candies", 10)
-				  .buildSoda("Fanta", 3) .build();
+				  .buildSoda("Fanta", 3) 
+				  .build();
 		  
 		  System.out.println(giftForMum);
 		  
@@ -34,8 +34,6 @@ public class Main {
 				  .build();
 		  
 		  System.out.println(giftForWife);
-		 
-		
 	}
 	
 }
