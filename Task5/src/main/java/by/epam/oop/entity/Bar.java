@@ -6,10 +6,5 @@ public class Bar extends Sweet {
 		super(name, cost);
 	}
 	
-	public Bar() {
-		
-	}
-
-
-	
+	public Bar() {}
 }
